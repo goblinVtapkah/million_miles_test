@@ -1,0 +1,40 @@
+{
+	"name": "frontend",
+	"version": "0.1.0",
+	"private": true,
+	"scripts": {
+		"dev": "next dev -H 0.0.0.0 -p 5000",
+		"build": "next build",
+		"start": "next start -H 0.0.0.0",
+		"lint": "eslint",
+		"lint:fix": "eslint . --fix",
+		"format": "prettier --write .",
+		"format:check": "prettier --check \"app/**/*.ts\""
+	},
+	"dependencies": {
+		"@reduxjs/toolkit": "^2.11.2",
+		"next": "16.2.1",
+		"react": "19.2.4",
+		"react-dom": "19.2.4",
+		"react-redux": "^9.2.0",
+		"react-router-dom": "^7.13.2"
+	},
+	"devDependencies": {
+		"@tailwindcss/postcss": "^4.2.2",
+		"@types/node": "^20",
+		"@types/react": "^19",
+		"@types/react-dom": "^19",
+		"@types/react-redux": "^7.1.34",
+		"@typescript-eslint/eslint-plugin": "^8.58.0",
+		"@typescript-eslint/parser": "^8.58.0",
+		"autoprefixer": "^10.4.27",
+		"eslint": "^9.39.4",
+		"eslint-config-next": "^16.2.1",
+		"eslint-config-prettier": "^10.1.8",
+		"eslint-plugin-prettier": "^5.5.5",
+		"postcss": "^8.5.8",
+		"prettier": "^3.8.1",
+		"tailwindcss": "^4.2.2",
+		"typescript": "^5"
+	}
+}

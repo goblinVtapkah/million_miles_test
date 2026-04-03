@@ -1,3 +1,6 @@
-fastapi
-uvicorn[standard]
+django
+djangorestframework
 psycopg2-binary
+gunicorn
+dj-database-url
+django-cors-headers

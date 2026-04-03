@@ -52,11 +52,11 @@ async def save_to_database(car, session):
 	mileage = target['cars']['base']['spec']['mileage']
 	price = target['cars']['base']['advertisement']['price']
 	engine = target['cars']['base']['spec']['displacement'] / 100
-	cur.execute(f"SELECT * FROM cars WHERE id=%s", (Id,))
+	cur.execute(f"SELECT * FROM car_car WHERE id=%s", (Id,))
 	car = cur.fetchone()
 	if car:
 		cur.execute("""
-		UPDATE cars SET images=%s, name=%s, year=%s, mileage=%s, engine=%s, price=%s
+		UPDATE car_car SET images=%s, name=%s, year=%s, mileage=%s, engine=%s, price=%s
 		WHERE id=%s
 		""", (
 			[image],
@@ -71,7 +71,7 @@ async def save_to_database(car, session):
 		conn.commit()
 	else:
 		cur.execute("""
-		INSERT INTO cars (id, images, name, year, mileage, engine, price)
+		INSERT INTO car_car (id, images, name, year, mileage, engine, price)
 		VALUES (%s, %s, %s, %s, %s, %s, %s)
 		""", (
 			Id,

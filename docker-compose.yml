@@ -13,10 +13,7 @@ services:
     ports:
       - "8000:8000"
     environment:
-      POSTGRES_HOST: db
-      POSTGRES_USER: user
-      POSTGRES_PASSWORD: password
-      POSTGRES_DB: mydb
+      - DATABASE_URL=postgres://user:password@db:5432/mydb
     volumes:
       - ./backend:/app
     depends_on:
@@ -40,9 +37,8 @@ services:
       POSTGRES_PASSWORD: password
       POSTGRES_DB: mydb
     ports:
-      - "5433:5432"
+      - "5432:5432"
     volumes:
-      - ./init:/docker-entrypoint-initdb.d
       - pgdata:/var/lib/postgresql/data
 
 volumes:
